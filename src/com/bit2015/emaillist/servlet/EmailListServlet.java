@@ -22,11 +22,11 @@ public class EmailListServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding( "UTF-8" );
+		
 		String actionName = request.getParameter( "a" );
 		ActionFactory actionFactory = new EmailListActionFactory();
+		
 		Action action = actionFactory.getAction( actionName );
 		action.execute(request, response);
 	}
-	
-
 }
